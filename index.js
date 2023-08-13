@@ -15,11 +15,15 @@ function updateClock(){
         ampm = "PM";
 
     };
+    h = h<10 ? "0" + h:h;
    
     timeUpdate('ampm',ampm);
     timeUpdate('hour',h);
     timeUpdate('minutes',m);
     timeUpdate('seconds',s);
+
+// makeing clock dynamic using setout function to create infinite loop 
+
     setTimeout(() =>{ 
         updateClock()
 
