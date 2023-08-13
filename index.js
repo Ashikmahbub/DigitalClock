@@ -1,7 +1,7 @@
 const timeUpdate =function (id,data){
 
      const currentTime =document.getElementById(id);
-     return currentTime.innerHTML =data;
+     return currentTime.innerText =data;
 }
 
 function updateClock(){
@@ -11,12 +11,22 @@ function updateClock(){
     let ampm = "AM";
 
     if(h>12){
-        h = h-12;
+        h =h-12;
         ampm = "PM";
 
-    }
-    timeUpdate('ampm',h);
-    timeUpdate('hour')
+    };
+   
+    timeUpdate('ampm',ampm);
+    timeUpdate('hour',h);
+    timeUpdate('minutes',m);
+    timeUpdate('seconds',s);
+    setTimeout(() =>{ 
+        updateClock()
+
+    },1000);
+    
     
 
 }
+updateClock();
+
